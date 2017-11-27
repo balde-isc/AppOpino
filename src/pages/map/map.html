@@ -1,0 +1,35 @@
+<!--
+  Generated template for the MapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Map</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng" iconUrl="../../assets/icon/markers/marker.png"></agm-marker>
+  </agm-map>
+  <ion-item color="light">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button color="default" outline (click)="doRadio()">
+            <ion-icon name="happy">Me gusta</ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="default" outline (click)="doRadio()">
+            <ion-icon name="sad">No me gusta</ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>
