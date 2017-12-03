@@ -14,3 +14,51 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.toolbar-background {
+    background-color: rgb(0,230,210)!important;
+    
+
+
+}
+    .toolbar-title-md{
+      text-align: center;
+      color: aliceblue!important;
+  }
+
+  .col{
+      padding: 0px!important;
+  }
+  .grid{
+      padding: 0px!important;
+  }
+
+  .tabs-md-primary .tab-button, .tabs-md-primary .tab-button-icon{
+   background-color: rgb(0,230,210)!important;
+    
+  }
+  .ion-md-map:before{
+    color: rgb(246, 248, 223);
+}
+  .ion-md-body:before{
+    color: rgb(246, 248, 223);
+}
+
+  .button-inner{
+    color: rgb(150, 151, 161);
+}
+
+.ion-md-sad:before{
+    padding: 5px;
+}
+
+.ion-md-happy:before{
+    padding: 5px;
+}
+
+.scroll-content{
+    background-color: rgb(31, 34, 45);
+}
+
+.alert-md .alert-button .button-inner{
+    color: black;
+}

@@ -2,5 +2,7 @@
   "name": "opino_andando",
   "app_id": "9bded2da",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

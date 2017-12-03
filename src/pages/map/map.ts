@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the MapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-map',
@@ -16,9 +9,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class MapPage {
   
   title: string = 'My first AGM project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-  
+  lat: number = 21.1348554;
+  lng: number = -101.677241;
   testRadioOpen: boolean;
   testRadioResult;
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
@@ -52,6 +44,7 @@ export class MapPage {
     alert.addButton({
       text: 'Ok',
       handler: data => {
+      //  this.todoService.add(data.addInput).subscribe();
         console.log('Radio data:', data);
         this.testRadioOpen = false;
         this.testRadioResult = data;

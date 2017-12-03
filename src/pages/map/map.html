@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Map</ion-title>
+    <ion-title>Ubicacion</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,20 +16,18 @@
   <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker [latitude]="lat" [longitude]="lng" iconUrl="../../assets/icon/markers/marker.png"></agm-marker>
   </agm-map>
-  <ion-item color="light">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <button ion-button color="default" outline (click)="doRadio()">
+          <button ion-button block clear (click)="doRadio()">
             <ion-icon name="happy">Me gusta</ion-icon>
           </button>
         </ion-col>
         <ion-col>
-          <button ion-button color="default" outline (click)="doRadio()">
-            <ion-icon name="sad">No me gusta</ion-icon>
+          <button ion-button block clear (click)="doRadio()">
+            <ion-icon name="sad">No me gustas</ion-icon>
           </button>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-item>
 </ion-content>
