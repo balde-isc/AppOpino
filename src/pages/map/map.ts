@@ -1,24 +1,32 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { TodoService } from "../../providers/settings/todo-service";
+import { Geolocation } from '@ionic-native/geolocation';
 
 @IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
 })
+
 export class MapPage {
-  
+
+
+  like : string = "";
+  dislike: string = "";
   title: string = 'My first AGM project';
-  lat: number = 21.1348554;
-  lng: number = -101.677241;
+  lat: number = 20.5943228;
+  lng: number = -100.4073663;
+  locacion: Object;
   testRadioOpen: boolean;
   testRadioResult;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public todoService: TodoService,private geolocation: Geolocation) {
   }
   
-
-  doRadio() {
+  doRadio(opinion) {
     let alert = this.alertCtrl.create();
+    
     alert.setTitle('Opino andando');
 
     alert.addInput({
@@ -45,7 +53,23 @@ export class MapPage {
       text: 'Ok',
       handler: data => {
       //  this.todoService.add(data.addInput).subscribe();
-        console.log('Radio data:', data);
+      let motivo = data;
+      let watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+        this.lat = data.coords.latitude
+        this.lng = data.coords.longitude
+       });      
+       this.locacion = {
+            latitude: this.lat,
+            longitude: this.lng 
+          };
+      this.todoService.ingresar(opinion, motivo ,this.locacion).subscribe(
+        err => {
+          console.log(err);
+      }
+
+      );
+      console.log(opinion, motivo, this.locacion)
         this.testRadioOpen = false;
         this.testRadioResult = data;
       }

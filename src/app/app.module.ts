@@ -8,7 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AgmCoreModule } from '@agm/core';
 import { SettingsProvider } from '../providers/settings/settings';
+import { TodoService } from '../providers/settings/todo-service';
 import { SettingsPage } from '../pages/settings/settings';
+import { Pedometer } from '@ionic-native/pedometer';
+import { HttpClientModule } from '@angular/common/http'
+import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +28,8 @@ import { SettingsPage } from '../pages/settings/settings';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDCyzzVSXiEPk4hVgX0CIdh_-sZ1MNNsp8'
     })
@@ -37,7 +46,10 @@ import { SettingsPage } from '../pages/settings/settings';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SettingsProvider
+    SettingsProvider,
+    Pedometer,
+    Geolocation,
+    TodoService
   ]
 })
 export class AppModule {}

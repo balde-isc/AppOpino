@@ -5,14 +5,26 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>settings</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-toolbar>
+      <ion-title>
+        User Settings
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button (tap)="dismiss()">
+          <span ion-text color="light">Cancel</span>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+   
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Step Goal</ion-label>
+        <ion-input type="number" [(ngModel)]="goal"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block outline (tap)="update()">Update</button>
+    </div>
+  </ion-content>
